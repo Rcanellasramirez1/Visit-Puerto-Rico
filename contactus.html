@@ -10,30 +10,32 @@
 <body>
     <div class="header">
         <div class="headerfin">
-          <a href="index.html" id="home">Home</a>
-          <a href="puertoricotoday.html" id= "prt">Puerto Rico Today </a>
-          <a href="nwregion.html" id="nw">N & W Region</a>
-          <a href="seregion.html" id="se">S & E Region </a>
-          <a href="sitemap.html" id="se">Sitemap</a>
-          <a href="contactus.html" id="feedback">Contact Us</a>
+         <a href="index.html" id="home">Home</a>
+         <a href="puertoricotoday.html" id= "prt">Puerto Rico Today </a>
+         <a href="nwregion.html" id="nw">N & W Region</a>
+         <a href="seregion.html" id="se">S & E Region </a>
+         <a href="culture.html" id="culture">Music on the Island</a>
+         <a href="sitemap.html" id="se">Sitemap</a>
+         <a href="contactus.html" id="feedback">Contact Us</a>
         </div>
       </div>
       <div>
         <br><p1 id="contactusp">This page is made by Roberto Canellas-Ramirez a Puerto Rican that was born, raised and lives in Puerto Rico. This website was made through the experiences of living twenty years in the island. Please leave you feedback on what you enjoyed and what can be improved on.</p1><br><br>
-   <fieldset>
-       <legend>Your Review:</legend>
+      <form name="myForm" onsubmit="return validate()">
        <div class="abajo">
         <div>
-           <label for="state-select">What was your favorite tab?</label>
-            <select name="state" id="state-select">
+           <label id="contact" for="option">What was your favorite tab?</label>
+            <select name="option" id="option">
+               <option value="null">--</option>
                <option value="home">Home</option>
                <option value="prt">Puerto Rico Today</option>
                <option value="sw">S & W Region</option>
                <option value="nw">N & W Region</option>
+               <option value="cul">Music on the island</option>
              </select>
         </div>
         <br>
-        <div>What do you think of this website?</div>
+        <div id="contact">What do you think of this website?</div>
         <div>
            <input type="radio" name="review" value="great"/>
            <label for="great">Great</label>
@@ -47,7 +49,7 @@
            <label for="comments">Comments:</label>
         </div>
        <div>
-           <textarea id="comments" name="comments" rows="3" cols="60"></textarea>
+           <textarea id="contact" name="comments" rows="3" cols="60"></textarea>
         </div>
         <br>
         <div>
@@ -55,7 +57,32 @@
            <button type="reset">Reset</button>
         </div>
        </div>
-     </fieldset>
+      </form>
      </div>
+     <script>
+        function validate(){
+           let x = document.forms["myForm"]
+           ["option"].value;
+           ["review"].value;
+           ["comment"].value;
+           if (document.myForm.option.value == "") {
+              alert("Please complete form");
+              return false;
+              documet.myform.option.focus();
+           }
+           if (document.myForm.review.value == "") {
+              alert("Please complete form");
+              return false;
+              documet.myform.review.focus();
+           }
+           if (document.myForm.comment.value == "") {
+              alert("Please complete form");
+              return false;
+              documet.myform.comment.focus();
+           }
+           return (true);
+        }
+
+     </script>
 </body>
 </html>
