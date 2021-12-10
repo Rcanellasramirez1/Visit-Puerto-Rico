@@ -18,13 +18,15 @@
       <a href="puertoricotoday.html" id= "prt">Puerto Rico Today </a>
       <a href="nwregion.html" id="nw">N & W Region</a>
       <a href="seregion.html" id="se">S & E Region </a>
+      <a href="culture.html" id="culture">Music on the Island</a>
       <a href="sitemap.html" id="se">Sitemap</a>
       <a href="contactus.html" id="feedback">Contact Us</a>
     </div>
   </div>
-      <div>
+      <div id="background">
         <br>
         <h1>Why Visit Puerto Rico</h1>
+        <button type="button" onclick="bck()">Click for colors of flag</button><br><br>
         <iframe id="videopr" src="https://www.youtube.com/embed/KgM-KWs9K8c" title="Puerto Rico Videor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
         <p2>Due to its history Puerto Rico is a very culturally rich state, from festivals year round to historical landmarks, every inch of the island has a story to tell and a person to meet. The island is full of beautiful landscapes, warm people, fascinating attractions and intriguing historical cities.</p2>
           <ol><li>Food</li><br>
@@ -34,10 +36,30 @@
             <p1>The sites to be seen in Puerto Rico are one in a million, there are many locations in Puerto Rico that many would have to travel to different parts of the world to see but in Puerto Rico you can see them all in the island. Puerto Rico also offers one of the Seven Wonders of the World, “El Yunque.” El Yunque is the second oldest national park in the world after Yellowstone Nation Park. Puerto Rico also offers three of the five bioluminescent bays in the world all in different areas of the island making it accessible for tourists to visit at any time in the vacation. The island also offers tourists flamenco beach which was nominated in 2016-2018 the top six beach in the world by US today. The beauty among beaches is shared meaning that a grand majority of beaches will be pristine. </p1><br>
         <br>
     
-            <img id="bacardi" src="images/bacardi.jpg"><li>Breweries and Distilleries</li><br>
-            <p1>Puerto Rico is also known for their great beers and rums, starting by the world renowned Bacardi. Puerto Rico has been home to Bacardi for almost seventy years, Bacardi is the largest privately owned distillery with more than 200 products that they produce on the island. There is also another rum distillery called the Serralles Distillery which is also a rum that is sold internationally. In terms of breweries there are two main one Cerveceria Puerto Rico which is the most well-known one and Ocean Lab Brewery the most luxurious one in the Caribbean. All of these factories offer tours for tourists where visitors have the chance to taste all their products and pair their products to different foods. To the left is a photo of the famouse Bacadi distillery. </p1>
+            <img id="bacardi" src="images/bacardi.jpg" onmouseover="zoomin()" onmouseout="zoomout()"><li>Breweries and Distilleries</li><br>
+            <p1>Puerto Rico is also known for their great beers and rums, starting by the world renowned Bacardi. Puerto Rico has been home to Bacardi for almost seventy years, Bacardi is the largest privately owned distillery with more than 200 products that they produce on the island. There is also another rum distillery called the Serralles Distillery which is also a rum that is sold internationally. In terms of breweries there are two main one Cerveceria Puerto Rico which is the most well-known one and Ocean Lab Brewery the most luxurious one in the Caribbean. All of these factories offer tours for tourists where visitors have the chance to taste all their products and pair their products to different foods. To the left is a photo of the famouse Bacadi distillery. (Hover over factory image to see something cool)</p1>
           </ol>
           <br>
       </div>
+    <script>
+
+  let colors = ["red", "blue", "white"],
+  index = 0;
+    
+document.getElementById("background").onclick = function() {
+  document.body.style.background = colors[index]; 
+  index = (index + 1) % colors.length;
+}
+      function zoomin(){
+        let myImg = document.getElementById("bacardi");
+        let currWidth = myImg.clientWidth;
+        myImg.style.width = (currWidth + 100 ) + "px";
+      }
+      function zoomout(){
+        let myImg = document.getElementById("bacardi");
+        let currWidth = myImg.clientWidth;
+        myImg.style.width = (currWidth - 100 ) + "px";
+      }
+    </script>
 </body>
 </html>
